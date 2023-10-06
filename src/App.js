@@ -1,23 +1,78 @@
-import logo from './logo.svg';
 import './App.css';
+import {Outlet, RouterProvider, ScrollRestoration, createBrowserRouter} from 'react-router-dom'
+import Footer from './components/Footer';
+import Header from './components/Header';
+import Home from './Pages/Home';
+import Jobpage from './Pages/Jobpage';
+import Map from './Pages/Map';
+import SignIn from './Pages/SignIn';
+import SavedJobs from './Pages/SavedJobs';
+import SingleJobs from './Pages/SingleJobs';
+import { LikedProvider } from './components/likedCtx';
+import Apply from './Pages/Apply';
+import ContactUs from './Pages/ContactUs';
+
+
+const Layout = () =>{
+  return(
+    <div>
+      <Header />
+      <ScrollRestoration />
+      <Outlet />
+      <Footer />
+    </div>
+  )
+}
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <Layout />,
+    children: [
+      {
+        path: '/',
+        element: <Home />
+      },
+      {
+        path: '/jobpage',
+        element: <Jobpage />
+      },
+      {
+        path: '/map',
+        element: <Map />
+      },
+      {
+        path: '/savedjobs',
+        element: <SavedJobs />
+      },
+      {
+        path: '/signin',
+        element: <SignIn />
+      },
+      {
+        path: '/jobs/:id',
+        element: <SingleJobs />
+      },
+      {
+        path: '/apply/:id',
+        element: <Apply />
+      },
+      {
+        path: '/contact',
+        element: <ContactUs />
+      }
+
+    ]
+
+}
+])
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <LikedProvider>
+       <RouterProvider router={router}/>
+      </LikedProvider>
     </div>
   );
 }

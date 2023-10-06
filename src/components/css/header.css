@@ -1,0 +1,82 @@
+header img{
+  width: 60px;
+ 
+}
+
+header{
+  position: sticky;
+  z-index: 999;
+  top: 0;
+  padding: 15px 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(250, 248, 248);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+.nav-links{
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+.nav-links .link{
+  display: flex;
+  align-items: center;
+  position: relative;
+  text-decoration: none;
+  margin-left: 30px;
+  font-weight: 600;
+  color: #012e58;
+  cursor: pointer;
+  transition: all 0.2s ease ;
+}
+
+.user-info{
+  color: #012e58;
+  margin-left: 20px;
+}
+
+
+
+.nav-links .link::after{
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  height: 3px;
+  background-color: #5ab808;
+  color: white;
+  width: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-links .link:hover:after{
+  width: 50%;
+}
+
+
+
+.nav-links .link.hearts{
+  display: flex;
+  align-items: center;
+}
+
+.heart{
+  margin-right: 5px;
+}
+
+
+
+.nav-links .actives::after{
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  height: 3px;
+  background-color: #5ab808;
+  color: white;
+  width: 50%;
+}
+

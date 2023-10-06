@@ -1,0 +1,117 @@
+.sign-in{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px 5%;
+  color: #012e58;
+  
+}
+
+
+
+.sign-in-btn .sign-btn{
+  padding: 5px 12px;
+  font-weight: 600;
+  outline: 0;
+  border: 1px solid black;
+  margin: 0 10px 30px 10px;
+  background-color: transparent;
+  height: 40px;
+  width: 100px;
+  cursor: pointer;
+}
+
+.sign-btn.active{
+  background-color: #5ab808;
+  border: 0;
+  color: white;
+
+}
+
+.sign-in-container{
+  flex-direction: column;
+  border: 1px solid black;
+  width: 300px;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.sign-in-container h1{
+  margin-top: 0;
+}
+
+input{
+  height: 30px;
+  padding: 10px;
+}
+
+label{
+  margin-bottom: 5px;
+}
+
+.form{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+form button{
+  display: inline-block;
+  border: 0;
+  outline: none;
+  margin-top: 15px;
+  background-color: #5ab808;
+  color: white;
+  padding: 10px 24px;
+  font-weight: 600;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+}
+
+
+form button.inactive-btn{
+  background-color: gray;
+  cursor: unset;
+}
+
+form button:hover{
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  color: white;
+}
+
+
+.sign-out{
+  display: inline-block;
+  border: 0;
+  outline: none;
+  margin-top: 15px;
+  background-color: #5ab808;
+  color: white;
+  padding: 10px 24px;
+  font-weight: 600;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+
+}
+
+.sign-out:hover{
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  color: white;
+}
+
+
+.error-msg-container{
+  background-color: rgba(82, 80, 80, 0.3);
+  padding: 5px;
+  margin-top: 0;
+  
+}
+
+.error-msg{
+  color: red;
+  font-size: 10px;
+  margin: 0;
+}

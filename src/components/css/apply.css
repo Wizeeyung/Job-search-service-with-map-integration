@@ -1,0 +1,69 @@
+.application-form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 5%;
+  color: #012e58;
+}
+
+.application-form form{
+  border: 1px solid black;
+  padding: 20px;
+  margin-bottom: 30px;
+  border-radius: 5px;
+}
+
+.application-form h1{
+  font-size: 20px;
+}
+
+.application-form form button{
+  display: inline-block;
+  border: 0;
+  outline: none;
+  margin-top: 15px;
+  background-color: #5ab808;
+  color: white;
+  padding: 10px 24px;
+  font-weight: 600;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+}
+
+.application-form form button.inactive-btn{
+  background-color: grey;
+  cursor: unset;
+}
+
+.application-form form button:hover{
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  color: white;
+}
+
+.apply-form{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.congrats{
+  display: flex;
+  align-items: center;
+}
+
+.correct{
+  color: #5ab808;
+  font-size: 40px;
+  margin: 0 8px;
+}
+
+.go-back{
+  cursor: pointer;
+  color: #5ab808;
+}
+
+.go-back:hover{
+  color: #012e58;
+}

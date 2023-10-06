@@ -1,0 +1,93 @@
+.jobs{
+  padding: 10px 5%;
+}
+.jobs h1{
+  text-align: center;
+}
+
+.job{
+  display: flex;
+  flex-wrap: wrap;
+  /* width: 100%; */
+ justify-content: space-evenly;
+ 
+  
+}
+
+.jobs-container{
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  padding: 20px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 400px;
+  cursor: pointer;
+  margin: 0 0.5rem 20px 0.5rem;
+  transition: 0.3s ease-in-out;
+}
+
+.jobs-container:hover{
+  transform: scale(0.98);
+}
+
+.jobs-container h2{
+  margin-top: 0;
+}
+
+.jobs-container p:nth-child(2){
+  font-weight: bold;
+}
+
+.jobs-container p:nth-child(3){
+  display: flex;
+  align-items: center;
+}
+
+.jobs-container p:last-child{
+  display: flex;
+  align-self: flex-start;
+  align-items: center;
+  margin-bottom: 0;
+  background-color: #5ab808;
+  padding: 10px;
+  color: white;
+  font-weight: 600;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.jobs-container p:last-child:hover{
+  background-color: #529d10;
+  transform: scale(0.97);
+}
+
+.jobs-container span:nth-child(4){
+  display: flex;
+  align-items: center;
+}
+
+.icon{
+  margin-right: 5px;
+}
+
+.icon.liked{
+  cursor: pointer;
+}
+
+.error-search{
+  width: fit-content;
+  background-color: red;
+  color: white;
+  padding: 10px;
+  font-weight: 600;
+  text-align: center;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.error-search-container{
+  display: flex;
+  justify-content: center;
+}

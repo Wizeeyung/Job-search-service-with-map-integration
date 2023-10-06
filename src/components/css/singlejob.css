@@ -1,0 +1,106 @@
+
+.singlejob{
+  padding: 20px 5%;
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  color: #012e58;
+}
+
+
+.single-job-right button{
+  display: inline-block;
+  border: 0;
+  outline: none;
+  margin-top: 15px;
+  background-color: #5ab808;
+  color: #012e58;
+  padding: 10px 24px;
+  font-weight: 600;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+}
+
+.single-job-right button{
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  color: white;
+}
+
+p.skill:first-child{
+  margin-left: 0;
+}
+
+.skill{
+  background-color: #012e58;
+  margin-left: 10px;
+  color: white;
+  font-weight: 500;
+  padding: 10px;
+  font-size: 10px;
+  margin-top: 0;
+  margin-bottom: 0;
+  
+}
+
+.skills{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.single-job-right .link{
+  text-decoration: none;
+  color: #012e58;
+}
+
+.single-job-right .link:hover{
+  color: green;
+}
+
+.skill-heading{
+  font-weight: bold;
+}
+
+p.align{
+  display: flex;
+  align-items: center;
+}
+
+.single-job-right p.align{
+  cursor: pointer;
+}
+
+.single-job-right .icon-space{
+  font-size: 20px;
+  margin-right: 5px;
+}
+
+button.align{
+  display: flex;
+  align-items: center;
+}
+
+.icon-space{
+  margin-right: 10px;
+}
+
+.space{
+  margin-right: 5px;
+}
+
+.single-job-right img{
+  width: 100px;
+  margin-top: 30px;
+}
+
+.spinner{
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+
+
+
+
