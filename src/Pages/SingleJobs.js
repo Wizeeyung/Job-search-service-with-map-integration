@@ -49,7 +49,7 @@ const SingleJobs = () => {
       setLiked(false)
     }
     
-  }, [])
+  }, [heart])
 
   
   // if item is present from the jobscard then setJobs to Item so i can use it for my UI
