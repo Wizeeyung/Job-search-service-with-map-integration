@@ -13,7 +13,7 @@ const MapContent = ({setViewport, mapRef}) => {
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       getPlaces();
-    }, 2000);
+    }, 300);
 
     return () => clearTimeout(timeoutId); // Clear the timeout on unmount
   }, [input]);
