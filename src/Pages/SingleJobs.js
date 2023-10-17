@@ -100,9 +100,9 @@ const SingleJobs = () => {
     setLiked(!like)
     
     if(!like){
-      toast.success(`${jobs.title} is added to favorites`)
+      toast.success(`${item.title} is added to favorites`)
     } else{
-      toast.error(`${jobs.title} removed from favorites`)
+      toast.error(`${item.title} removed from favorites`)
     }
   }
 
@@ -160,19 +160,19 @@ const SingleJobs = () => {
           </div>
           <button className='align' onClick={()=>  
             dispatch(addToFavorites({
-              id: jobs.id,
-              title: jobs.title,
-              company: jobs.company,
-              salary_range: jobs.salary_range,
-              contract: jobs.type,
-              location: jobs.location,
-              position: jobs.position,
-              description: jobs.description,
-              type: jobs.type,
-              postcode: jobs.postcode,
-              skills_required: jobs.skills_required,
-              experience_level: jobs.experience_level,
-              date_posted: jobs.date_posted,
+              id: item.id,
+              title: item.title,
+              company: item.company,
+              salary_range: item.salary_range,
+              contract: item.type,
+              location: item.location,
+              position: item.position,
+              description: item.description,
+              type: item.type,
+              postcode: item.postcode,
+              skills_required: item.skills_required,
+              experience_level: item.experience_level,
+              date_posted: item.date_posted,
             })) & handleNotification()
         }>{like ? <AiFillHeart className='icon-space'/> : <AiOutlineHeart className='icon-space'/>} {like ? 'Remove from favorites' : 'Add To Favorites'}</button>
           <img src={logo} alt='logo'/>

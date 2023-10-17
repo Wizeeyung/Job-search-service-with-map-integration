@@ -2,21 +2,25 @@ import React, {useState} from 'react'
 import './css/testimonials.css'
 import {BsArrowLeftCircleFill, BsArrowRightCircleFill} from 'react-icons/bs'
 
-
+// Define a functional component named 'Testimonials' that accepts a 'slides' prop.
 const Testimonials = ({slides}) => {
 
+  // Declare a state variable 'slide' and a function 'setSlide' to manage the current slide.
   const [slide, setSlide] = useState(0)
 
+  // Define a function 'nextSlide' to handle moving to the next slide.
   const nextSlide = ()=>{
-    
+    // Update the 'slide' state, looping to the first slide when reaching the end.
     setSlide(slide === slides.length -1 ? 0 : slide + 1)
   }
 
+  // Define a function 'prevSlide' to handle moving to the previous slide.
   const prevSlide = ()=>{
+     // Update the 'slide' state, looping to the last slide when at the first slide.
     setSlide(slide === 0 ? slides.length - 1 : slide - 1)
   }
 
-  console.log(slides)
+
   return (
     <div className='testimonial-container'>
       <h1>Testimonials</h1>

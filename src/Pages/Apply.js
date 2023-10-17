@@ -5,47 +5,54 @@ import {IoMdCheckmarkCircle} from 'react-icons/io'
 import {GrFormPreviousLink} from 'react-icons/gr'
 import jobs from '../services/jobs'
 import { useDispatch, useSelector } from 'react-redux'
-import { toggleApply, addToAppliedJobs, addUser } from '../Redux/cartJobsSlice'
+import { addToAppliedJobs} from '../Redux/cartJobsSlice'
 
+// Define a functional component named 'Apply'.
 const Apply = () => {
 
-  
+  //Declare a state variable for all useState hooks
   const [fullJobs, setFullJobs] = useState([])
   const [fnameInput, setfNameInput]= useState('')
   const [lnameInput, setlNameInput] = useState('')
   const [mailInput, setMailInput] = useState('')
   const [cv, setCv] = useState(null)
   const [applied, setApplied] = useState(false)
-  const [appliedJobs, setAppliedJobs] =useState([])
   const [handleEmailError, setEmailError] = useState(false)
-  
   const [job, setJob] = useState([])
+  // Get the current location using the 'useLocation' hook.
   const location = useLocation()
+  // Get the 'dispatch' function from Redux for dispatching actions.
   const dispatch = useDispatch()
+  // Get the 'navigate' function from 'react-router-dom' for routing.
   const navigate = useNavigate()
+  // Destructure the 'item' object from the 'location.state'.
   const {item} = location.state
 
-  const jobApplied = useSelector((state)=> state.cartJobs.jobApplied)
-  const appliedJobData = useSelector((state)=> state.cartJobs.appliedJobData)
+  // const jobApplied = useSelector((state)=> state.cartJobs.jobApplied)
   
-
+  // Get the 'appliedJobData' from the Redux store using 'useSelector'.
+  const appliedJobData = useSelector((state)=> state.cartJobs.appliedJobData)
+  // Check if the current job is already applied.
   const appliedj = appliedJobData.find((findjob)=> findjob.id === fullJobs.id)
+  // Set 'applied_' to 'true' if the job is already applied, otherwise 'false'.
   const applied_ = appliedj ? true : false 
- 
+ // Define a function to handle changes in the first name input.
   const handlefName = (e)=>{
     e.preventDefault()
     setfNameInput(e.target.value)
   }
-
+  // Define a function to handle changes in the last name input.
   const handlelName = (e)=>{
     e.preventDefault()
     setlNameInput(e.target.value)
   }
-
+  // Define a function to handle changes in the email input.
   const handlMail = (e)=>{
     e.preventDefault()
     const input = e.target.value;
+    // Define a regex pattern for a valid email.
     const passwordPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    // Update the email input and set the email error to 'true'.
     setMailInput(input)
     setEmailError(true)
     if(passwordPattern.test(input)){
@@ -54,17 +61,20 @@ const Apply = () => {
     }
   }
 
+  // Update the CV file using the selected file.
   const handleCv = (e)=>{
       e.preventDefault()
       setCv(e.target.files[0])
   }
 
+  // Calculate whether all input fields are active (filled).
   const allInputActive = mailInput && fnameInput && lnameInput && cv;
 
+  // Define a function to handle submission for applied jobs.
   const handleSubmit =(e)=>{
     e.preventDefault()
-    // const applied = !item.applied
     const allInputActive = mailInput && fnameInput && lnameInput && cv;
+    // If all fields are filled, toggle the 'applied' state.
     if(allInputActive){
       setApplied(!applied_)
       dispatch(addToAppliedJobs({
@@ -72,34 +82,11 @@ const Apply = () => {
         title: item.title,
         company: item.company,
         location: item.location
-      }))
-      
-      // dispatch(toggleApply({id: item.id}))
-      // setAppliedJobs(applied)
-      // item.applied = true
-      // localStorage.setItem(`applied_${item.id}`, JSON.stringify(item.applied))
-      
-      console.log(applied)
+      })) 
     }
-
-
   }
 
-  // useEffect(() => {
-  //   if (item) {
-  //     const storedAppliedStatus = localStorage.getItem(`applied_${item.id}`);
-  //     if (storedAppliedStatus !== null) {
-  //       const parsedAppliedStatus = JSON.parse(storedAppliedStatus);
-  //       setApplied(parsedAppliedStatus); // Set the applied state in the component
-  //       item.applied = parsedAppliedStatus; // Set the applied status in the item object
-  //     } else {
-  //       setApplied(false); // Set the initial state in case there's no stored status
-  //     }
-  //   }
-  // }, [item]);
-
-  
-  
+  // Update state variables based on the selected job.
   useEffect(()=>{
     if (item){
     setApplied(applied_)

@@ -1,16 +1,14 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import Banner from '../components/Banner'
 import Search from '../components/Search'
 import Jobs from '../components/Jobs'
 import jobs from '../services/jobs'
-import JobsCard from '../components/JobsCard'
 import Pagination from '../components/Pagination'
-import Testimonials from '../components/Testimonials'
-import slides from '../services/CarouselData'
 
+// Define a functional component named 'Jobpage'.
 const Jobpage = () => {
 
+  // Declare a state variable for all useState hooks.
   const [search, setSearch] = useState(false)
   const [jobData, setJobs] = useState([])
   const [locationInput, setLocationInput] = useState('')

@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './css/search.css'
 
+// Define a functional component named 'Search' that accepts several props, including functions for handling input changes and form submission.
 const Search = ({handleTitleInput,titleInput, handleSubmit, handleLocationInput , locationInput, handleFiltering }) => {
 
-
-
+  // Define an array 'buttons' containing objects for defining filtering options.
   const buttons = [
     {
       category: 'location',

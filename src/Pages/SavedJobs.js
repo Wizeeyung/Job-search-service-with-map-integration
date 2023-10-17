@@ -6,17 +6,13 @@ import FavoriteNotEmpty from '../components/FavoriteNotEmpty'
 import { clearJobs } from '../Redux/cartJobsSlice'
 import { ToastContainer, toast } from 'react-toastify';
 
+// Define a functional component named 'SavedJobs'.
 const SavedJobs = () => {
 
-
+  // Retrieve saved job data from the Redux store using 'useSelector'.
   const jobData = useSelector((state)=> state.cartJobs.jobData)
+  // Initialize 'dispatch' to dispatch actions to the Redux store.
   const dispatch = useDispatch()
-
-  console.log(jobData, 'jobdsta')
-  
-
-  
-
 
   return (
     <div className='saved-jobs'>

@@ -4,29 +4,30 @@ import Banner from '../components/Banner'
 import Search from '../components/Search'
 import Jobs from '../components/Jobs'
 import jobs from '../services/jobs'
-import JobsCard from '../components/JobsCard'
 import Pagination from '../components/Pagination'
 import Testimonials from '../components/Testimonials'
 import slides from '../services/CarouselData'
 
-
-
-
+// Define a functional component named 'Home'.
 const Home = () => {
 
+  // Declare a state variable for all useState hooks.
   const [search, setSearch] = useState(false)
   const [jobData, setJobs] = useState([])
   const [locationInput, setLocationInput] = useState('')
   const [currentPage, setCurrentPage] = useState(1);
   const [postPerPage, setPostPerPage] = useState(12);
+  // Calculate the index of the last post to be displayed on the current page.
   const lastPostIndex = currentPage * postPerPage;
+  // Calculate the index of the first post to be displayed on the current page.
   const firstPostIndex = lastPostIndex - postPerPage
+  // Get the current posts to be displayed on the page.
   const currentPosts = jobData.slice(firstPostIndex,lastPostIndex)
 
   const [titleInput, setTitleInput] = useState('')
   const [filteredJobs, setFilteredJobs] = useState([])
-  console.log(filteredJobs.length)
 
+  // Define a function to apply filters based on user input and selection.
   const applyFilters = (e, selectedFilter, cartItem) => {
     e.preventDefault()
     // Start with the full list of jobs
@@ -74,13 +75,13 @@ const Home = () => {
     );
   };
   
-
+  // Define a function to handle changes in the title input.
   const handleTitleInput = (e) =>{
     setTitleInput(e.target.value.toLowerCase())
-
+    // Filter jobs based on the entered title.
     const filteredItems = jobData.filter((job)=> job.title.toLowerCase().includes(titleInput) || 
     job.position.toLowerCase().includes(titleInput));
-
+    // Update the filtered job data.
     setFilteredJobs(filteredItems)
 
     if(titleInput.length > 1){
@@ -91,11 +92,12 @@ const Home = () => {
     
   }
 
+  // Define a function to handle changes in the location input.
   const handleLocationInput = (e)=>{
     setLocationInput(e.target.value.toLowerCase())
-
+    // Filter jobs based on the entered location.
     const filteredItems = jobData.filter((job)=> job.location.toLowerCase().includes(locationInput))
-
+    // Update the filtered job data.
     setFilteredJobs(filteredItems)
 
     if(locationInput.length > 1){
@@ -117,40 +119,12 @@ const Home = () => {
 
   // }
 
-
+  // Define a function to reload the page.
   const reloadPage = () => {
     window.location.reload();
   };
 
-
-  const handleFiltering = (e, selectedFilter, cartItem)=>{
-    e.preventDefault()
-    
-    if (selectedFilter === 'location'){
-      const filtered = cartItem === 'All' ? jobData : jobData.filter((job)=> job.location === cartItem );
-      setSearch(true)
-      setFilteredJobs(filtered)
-    } else if (selectedFilter === 'salarie'){
-      const salaryfiltered = cartItem === 'All' ? jobData : jobData.filter((job)=> job.salary_range === cartItem)
-      setSearch(true)
-      setFilteredJobs(salaryfiltered)
-    } else if(selectedFilter === 'type'){
-      const typefiltered = cartItem === 'All' ? jobData : jobData.filter((job)=> job.type === cartItem)
-      setSearch(true)
-      setFilteredJobs(typefiltered)
-    }
-     else{
-      setFilteredJobs(jobData)
-    }
-  
-  }
-
-  
-  
-
-  
-
-
+   // Use the 'useEffect' hook to initialize and set initial job data.
   useEffect(()=>{
     const initialJobs = [...jobs]
     setJobs(initialJobs)
@@ -168,8 +142,6 @@ const Home = () => {
       <Jobs  jobs={search ? filteredJobs :currentPosts} filteredJobs={filteredJobs}/>
       {search ? null : <Pagination totalPosts={jobs.length} setCurrentPage={setCurrentPage} postPerPage={postPerPage}/>}
       
-      
-      {/* <Jobs  jobs={filteredJobs}/> */}
       <Testimonials slides={slides} />
     </div>
   )

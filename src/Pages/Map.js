@@ -5,7 +5,6 @@ import '../components/css/map.css'
 import 'mapbox-gl/dist/mapbox-gl.css';
 import jobs from '../services/jobs';
 import {FaMapMarkerAlt} from 'react-icons/fa'
-import getCenter from 'geolib/es/getCenter'
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import MapContent from '../components/MapContent';
@@ -32,7 +31,6 @@ const Maps = () => {
 
   }
   const root = idString(id)
-  console.log(selectedJob, 'selected job')
   
   
   // Am sending the selected job data, the identified data and the liked to 
@@ -66,9 +64,6 @@ const Maps = () => {
     }
     
   },[jobs])
-
-  
-
 
   // Define the Mapbox token
   const TOKEN = process.env.REACT_APP_MAPBOX_TOKEN;
