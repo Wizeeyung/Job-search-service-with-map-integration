@@ -11,6 +11,8 @@ const SavedJobs = () => {
 
   const jobData = useSelector((state)=> state.cartJobs.jobData)
   const dispatch = useDispatch()
+
+  console.log(jobData, 'jobdsta')
   
 
   

@@ -126,3 +126,53 @@
   background-color: #007bff;
   color: #fff;
 }
+
+
+
+
+/* ..........Mobile Responsiveness....... */
+@media all and (max-width: 420px) {
+  .search-container{
+    width: 100%;
+  }
+
+  .search-container form{
+    flex-direction: column;
+  }
+
+  .search-container form input{
+    width: 100%;
+    margin-bottom: 10px;
+    height: 30px;
+  }
+  
+  .search-container form button{
+    height: 30px;
+    padding: 8px 14px;
+  }
+
+  #location,
+#salarie, #type {
+  width: 90px;
+  padding: 5px;
+  font-size: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.3s;
+}
+
+}
+
+
+/* .......Tablet Responsiveness...... */
+@media all and (min-width: 421px) and (max-width: 920px){
+  .search-container{
+    width: 85%;
+  }
+
+  .search-container form input{
+    width: 40%;
+  }
+}

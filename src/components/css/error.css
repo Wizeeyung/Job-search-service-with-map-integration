@@ -1,0 +1,56 @@
+.error{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  box-sizing: border-box;
+  padding: 50px;
+}
+.error img{
+  width: 500px;
+}
+.error button{
+  background-color: #012e58;
+  padding: 8px 12px;
+  border: 0;
+  outline: 0;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+
+
+/* ......Tablet Responsiveness.... */
+@media all and (min-width: 421px) and (max-width: 920px){
+  .error{
+    height: 72vh;
+  }
+
+  .error button{
+    font-size: 14px;
+    margin-top: 20px;
+
+  }
+}
+
+
+
+
+/* .....Mobile Responsiveness....... */
+@media all and (max-width: 420px) {
+
+  .error{
+    height: 40vh;
+  }
+
+  .error img{
+    width: 300px;
+  }
+  .error button{
+    font-size: 12px;
+  }
+
+  
+}

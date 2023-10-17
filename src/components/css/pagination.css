@@ -29,3 +29,21 @@
   background-color: #5ab808;
 
 }
+
+
+
+/* ..............Mobile Responsiveness........ */
+@media all and (max-width: 420px) {
+
+  .pagination-container{
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+  }
+  .page-button{
+    width: 30px;
+    height: 30px;
+    font-size: 12px;
+  }
+  
+}

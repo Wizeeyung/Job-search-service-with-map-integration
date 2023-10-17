@@ -1,7 +1,6 @@
 import React from 'react'
 import {BsFacebook, BsTiktok} from 'react-icons/bs'
 import {AiFillInstagram,AiFillYoutube} from 'react-icons/ai'
-// import {logos} from '../assets/logo-wiz-bg.png'
 import './css/footer.css'
 
 const Footer = () => {
@@ -9,7 +8,6 @@ const Footer = () => {
     <footer>
       <div className='footer-container'>
         <div className='col first-col'>
-          {/* <img src={logos} alt='logo'/> */}
           <h1>Sell on WizCart</h1>
           <p>Sell globally, start with wizzy</p>
           <div className='social-icons'>

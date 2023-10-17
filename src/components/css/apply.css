@@ -16,6 +16,7 @@
 
 .application-form h1{
   font-size: 20px;
+  text-align: center;
 }
 
 .application-form form button{
@@ -66,4 +67,21 @@
 
 .go-back:hover{
   color: #012e58;
+}
+
+
+
+/* ...........Mobile Responsiveness........... */
+@media all and (max-width: 420px) {
+  .congratulations h2{
+    display: flex;
+    text-align: center;
+    font-size: 16px;
+    flex-direction: column;
+  }
+
+  .congratulations p{
+    text-align: center;
+  }
+  
 }

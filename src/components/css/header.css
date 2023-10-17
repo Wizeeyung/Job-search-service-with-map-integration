@@ -1,11 +1,6 @@
-header img{
-  width: 60px;
- 
-}
-
 header{
   position: sticky;
-  z-index: 999;
+  z-index: 1000;
   top: 0;
   padding: 15px 5%;
   display: flex;
@@ -13,6 +8,10 @@ header{
   justify-content: space-between;
   background-color: rgb(250, 248, 248);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+header img{
+  width: 60px;
 }
 
 .nav-links{
@@ -67,7 +66,13 @@ header{
   margin-right: 5px;
 }
 
+.menu-dropdown{
+  display: none;
+}
 
+.nav-links .link.close-menu{
+  display: none;
+}
 
 .nav-links .actives::after{
   content: '';
@@ -80,3 +85,76 @@ header{
   width: 50%;
 }
 
+
+
+
+
+
+/* ..........Mobile Responsiveness............. */
+@media all and (max-width: 420px) {
+  .nav-links{
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: rgb(219, 225, 231);
+    /* width: 150px; */
+    max-width: 250px;
+    padding: 20px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: all 0.6s ease-in-out;
+    /* display: none; */
+  }
+
+  header{
+    position: sticky;
+    top: 0;
+    z-index: 2000;
+  }
+
+  .nav-links.close{
+    top: -500px;
+    
+  }
+
+  .nav-links .link.close-menu{
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    cursor: pointer;
+    font-size: 18px;
+    display: block;
+  }
+
+  .nav-links .link{
+    margin-bottom: 30px;
+    margin-left: 0;
+  }
+
+  header img{
+    width: 40px;
+
+  }
+
+  .menu-dropdown{
+    display: block;
+    font-size: 25px;
+  }
+
+  .user-info{
+    margin-left: 0;
+  }
+  
+}
+
+
+
+/* ..........Tablet Responsiveness............. */
+@media all and (min-width: 421px) and (max-width: 920px){
+  .nav-links .link{
+    margin-left: 15px;
+    font-size: 14px;
+  }
+  
+
+}

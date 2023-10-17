@@ -113,3 +113,27 @@ p.carousel-txt{
 .carousel-txt-hidden{
   display: none;
 }
+
+
+
+/* ..........Mobile Responsiveness............... */
+@media all and (max-width: 420px){
+  .image-carousel{
+    width: 330px;
+    height: 330px;
+  }
+
+  .slide{
+    width: 150px;
+    height: 150px;
+  }
+
+
+  p.carousel-txt{
+    font-size: 14px;
+  }
+
+  .testimonial-container h1{
+    margin-top: 0;
+  }
+}

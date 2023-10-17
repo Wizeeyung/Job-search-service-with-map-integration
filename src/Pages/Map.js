@@ -32,6 +32,7 @@ const Maps = () => {
 
   }
   const root = idString(id)
+  console.log(selectedJob, 'selected job')
   
   
   // Am sending the selected job data, the identified data and the liked to 
@@ -64,7 +65,9 @@ const Maps = () => {
       setFullJobs(jobs)
     }
     
-  },[])
+  },[jobs])
+
+  
 
 
   // Define the Mapbox token
@@ -98,8 +101,9 @@ const Maps = () => {
         <Popup className='popup' onClose={()=>{
            setSelectedJob({})}} closeOnClick={false} latitude={selectedJob.latitude ?? 0} longitude={selectedJob.longitude ?? 0}>
           <div className='popup-container'  onClick={handleClick}>
-            <h1>{selectedJob.title}</h1>
-            <p>{selectedJob.company}</p>
+            <h1 className='map-title'>{selectedJob.title}</h1>
+            <p className='map-company'>Company: '{selectedJob.company}'</p>
+            <p>{selectedJob.location}: '{selectedJob.postcode}'</p>
           </div>
         </Popup>
         </div>)
@@ -109,9 +113,9 @@ const Maps = () => {
         ))
         }
   
-        <NavigationControl />
+        <NavigationControl position='bottom-right'/>
         <GeolocateControl  position='top-left'  trackUserLocation />
-        <MapContent setViewport={setViewport} mapRef={mapRef}/>
+        <MapContent setViewport={setViewport} mapRef={mapRef} />
 
         </Map>
       </div>

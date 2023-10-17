@@ -10,6 +10,7 @@ import {FaMoneyCheckAlt} from 'react-icons/fa'
 import {GiTrophyCup} from 'react-icons/gi'
 import {AiOutlineHeart, AiFillHeart} from 'react-icons/ai'
 import logo from '../assets/cartjob-logo.png'
+import jobs from '../services/jobs';
 import {GrFormPreviousLink} from 'react-icons/gr'
 import { addToFavorites, addUser, removeFavorites, toggleLike } from '../Redux/cartJobsSlice'
 import {ClipLoader} from 'react-spinners'
@@ -17,7 +18,7 @@ import { useDispatch, useSelector } from 'react-redux'
 
 const SingleJobs = () => {
 
-  const [jobs, setJobs] = useState({})
+  const [fulljobs, setJobs] = useState({})
   const [loader, setLoader] = useState(true)
   const [like, setLiked] = useState(false)
   const location = useLocation()
@@ -27,15 +28,17 @@ const SingleJobs = () => {
   
   
   const appliedJobData = useSelector((state)=> state.cartJobs.appliedJobData)
+  console.log(appliedJobData , 'this job')
   const dispatch = useDispatch()
   // destructuring the passed prop from the jobs card so i can use its prop in the singleJob Page
   const {item , liked, heart} = location.state || {}
+  console.log(item, 'item')
   
   // trying to find from the redux store where a job i applied to is equal to the over all job,,
   // if its true then set applied to true so i can use it for passing condition
-  const appliedj = appliedJobData.find((findjob)=> findjob.id === jobs.id)
+  const appliedj = appliedJobData.find((findjob)=> findjob.id === item.id)
   const applied = appliedj ? true : false
-  console.log(applied)
+
   
  
   // if heart is present, then setLiked to true else if not present setLiked to false
@@ -52,10 +55,10 @@ const SingleJobs = () => {
   // if item is present from the jobscard then setJobs to Item so i can use it for my UI
   // then in the useEffect i set loader to false for few seconds before the items displays
   useEffect(()=>{
-    if (item){
-      setJobs(item)
-    }
-
+    // if (item){
+    //   setJobs(item);
+    // }
+    setJobs(jobs)
     const loadingTimeout = setTimeout(()=>{
       setLoader(false)
     }, 1000);
@@ -65,14 +68,31 @@ const SingleJobs = () => {
     }
   },[item])
 
+  useEffect(()=>{
+    setJobs(jobs)
+  },[])
+
   let skills = null
+  let skilled = fulljobs.skills_required
 
   // if jobs.skills_required is present from the useEffect then map over it, so i can use it for my UI
-  if(jobs.skills_required){
-    skills = jobs.skills_required.map((skill)=>(
+  if(item.skills_required){
+    skills = item.skills_required.map((skill)=>(
       <p key={skill} className='skill'>{skill}</p>
     ))
   }
+
+  if(fulljobs.skills_required){
+    skilled = fulljobs.skills_required.map((skill)=>(
+      <p key={skill} className='skill'>{skill}</p>
+    ))
+  }
+
+  console.log(skilled, 'skilled')
+
+  
+
+
   
   
 
@@ -120,36 +140,43 @@ const SingleJobs = () => {
         <>
         <div className='singlejob'>
           <div className='single-job-left'>
-          <h1>{jobs.title}</h1>
-          <p><strong>Company:</strong> {jobs.company}</p>
-          <p><strong>Position:</strong>  {jobs.position}</p>
-          <p><strong>Description:</strong>  {jobs.description}</p>
-          <p className='align'><PiBagFill className='icon-space' /> <span className='space'><strong>Contract Type:</strong></span>  {jobs.type}</p>
-          <p className='align'><HiClock className='icon-space'/> <span className='space'><strong>Date Posted:</strong ></span>  {jobs.date_posted}</p>
-          <p className='align'><ImLocation className='icon-space'/> {jobs.location}</p>
-          <p><strong>Postcode:</strong> {jobs.postcode}</p>
+          <h1>{item.title || fulljobs.title}</h1>
+          <p><strong>Company:</strong> {item.company || fulljobs.company}</p>
+          <p><strong>Position:</strong>  {item.position || fulljobs.position}</p>
+          <p><strong>Description:</strong>  {item.description || fulljobs.description}</p>
+          <p className='align'><PiBagFill className='icon-space' /> <span className='space'><strong>Contract Type:</strong></span>  {item.type || fulljobs.type}</p>
+          <p className='align'><HiClock className='icon-space'/> <span className='space'><strong>Date Posted:</strong ></span>  {item.date_posted || fulljobs.date_posted}</p>
+          <p className='align'><ImLocation className='icon-space'/> {item.location || fulljobs.location}</p>
+          <p><strong>Postcode:</strong> {item.postcode || fulljobs.postcode}</p>
           
-          <p className='align'><FaMoneyCheckAlt className='icon-space'/> {jobs.salary_range}</p>
-          <p className='align'><GiTrophyCup className='icon-space'/> {jobs.experience_level}</p>
+          <p className='align'><FaMoneyCheckAlt className='icon-space'/> {item.salary_range || fulljobs.salary_range}</p>
+          <p className='align'><GiTrophyCup className='icon-space'/> {item.experience_level || fulljobs.experience_level}</p>
         </div>
         <div className='single-job-right'>
           <button onClick={applyClick}>{applied ? 'Applied' : 'Apply Now'}</button>
           <p className='skill-heading'>Skills:</p>
           <div className='skills'>
-            {skills}
+            {skills || skilled}
           </div>
           <button className='align' onClick={()=>  
             dispatch(addToFavorites({
               id: jobs.id,
               title: jobs.title,
               company: jobs.company,
-              salary: jobs.salary_range,
+              salary_range: jobs.salary_range,
               contract: jobs.type,
-              location: jobs.location
+              location: jobs.location,
+              position: jobs.position,
+              description: jobs.description,
+              type: jobs.type,
+              postcode: jobs.postcode,
+              skills_required: jobs.skills_required,
+              experience_level: jobs.experience_level,
+              date_posted: jobs.date_posted,
             })) & handleNotification()
         }>{like ? <AiFillHeart className='icon-space'/> : <AiOutlineHeart className='icon-space'/>} {like ? 'Remove from favorites' : 'Add To Favorites'}</button>
           <img src={logo} alt='logo'/>
-          <p className='align' onClick={()=>navigate(-1)}><GrFormPreviousLink /> <strong>Go back to Jobs</strong></p>
+          <p className='align' onClick={()=>navigate('/jobpage')}><GrFormPreviousLink /> <strong>Go back to Jobs</strong></p>
         </div>
       </div>
       </>

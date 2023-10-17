@@ -143,10 +143,10 @@ const Apply = () => {
       </form>
       </> :
 
-      <>
+      <div className='congratulations'>
         <h2 className='congrats'>Congratulations <IoMdCheckmarkCircle className='correct'/> you have applied for the role of {job.title}</h2>
         <p className='go-back' onClick={()=>navigate(-1)}><GrFormPreviousLink /> <strong>Go back to Jobs</strong></p>
-      </>}
+      </div>}
 
     </div>
   )

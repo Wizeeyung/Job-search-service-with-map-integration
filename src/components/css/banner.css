@@ -39,4 +39,58 @@
 .banner-contents button:hover{
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
   color: white;
+  
+}
+
+
+
+
+/* ............Mobile Responsiveness....... */
+@media all and (max-width: 420px) {
+  .banner-container img{
+    display: none;
+  }
+
+
+  .banner-contents{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 40vh;
+    
+  }
+  .banner-container h1{
+    font-size: 30px;
+  }
+
+  .banner-contents  p{
+    width: 250px;
+    font-size: 14px;
+    /* text-align: justify; */
+  }
+  
+}
+
+
+/* ..........Tablet Responsiveness............. */
+@media all and (min-width: 421px) and (max-width: 920px){
+  .banner-container img{
+    position: relative;
+    /* bottom: -20px; */
+    width: 400px;
+  }
+
+  .banner-container h1{
+    font-size: 34px;
+  }
+
+  .banner-container{
+    height: 30vh;
+  }
+
+  .banner-contents  p{
+    font-size: 16px;
+    
+  }
+
 }

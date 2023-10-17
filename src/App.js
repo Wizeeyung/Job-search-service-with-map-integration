@@ -1,6 +1,7 @@
 import './App.css';
 import {Outlet, RouterProvider, ScrollRestoration, createBrowserRouter} from 'react-router-dom'
 import Footer from './components/Footer';
+import Error from './components/Error';
 import Header from './components/Header';
 import Home from './Pages/Home';
 import Jobpage from './Pages/Jobpage';
@@ -60,6 +61,10 @@ const router = createBrowserRouter([
       {
         path: '/contact',
         element: <ContactUs />
+      },
+      {
+        path: '*',
+        element: <Error />
       }
 
     ]

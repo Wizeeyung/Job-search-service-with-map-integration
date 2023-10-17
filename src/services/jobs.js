@@ -12,7 +12,7 @@ const jobs =   [
       "location": "Bangor",
       "postcode": "LL57 1EG",
       "skills_required": ["JavaScript", "React", "Node.js"],
-      "salary_range": "$50,000 - $70,000",
+      "salary_range": "£60,000 - £80,000",
       "experience_level": "Mid-level",
       "latitude": 53.224842,
       "longitude": -4.115264
@@ -28,7 +28,7 @@ const jobs =   [
       "location": "London",
       "postcode": "E1 6AN",
       "skills_required": ["Data Analysis", "SQL", "Excel"],
-      "salary_range": "$35,000 - $45,000",
+      "salary_range": "£55,000 - £75,000",
       "experience_level": "Entry-level",
       "latitude": 51.518852,
       "longitude": -0.078510
@@ -44,7 +44,7 @@ const jobs =   [
       "location": "Bangor",
       "postcode": "LL57 1US",
       "skills_required": ["UX/UI Design", "Wireframing", "Prototyping"],
-      "salary_range": "$80,000 - $100,000",
+      "salary_range": "£70,000 - £90,000",
       "experience_level": "Senior",
     },
     {
@@ -58,7 +58,7 @@ const jobs =   [
       "location": "Manchester",
       "postcode": "M1 2EW",
       "skills_required": ["Environmental Science", "Data Analysis", "Fieldwork"],
-      "salary_range": "$60,000 - $75,000",
+      "salary_range": "£45,000 - £65,000",
       "experience_level": "Mid-level",
       "latitude": 53.478735,
       "longitude": -2.225385
@@ -74,7 +74,7 @@ const jobs =   [
       "location": "Bangor",
       "postcode": "LL57 2AW",
       "skills_required": ["Financial Analysis", "Excel", "Budgeting"],
-      "salary_range": "$70,000 - $90,000",
+      "salary_range": "£50,000 - £70,000",
       "experience_level": "Senior",
     },
     {
@@ -88,7 +88,7 @@ const jobs =   [
       "location": "Bangor",
       "postcode": "LL57 2PS",
       "skills_required": ["Nursing", "Patient Care", "Medical Knowledge"],
-      "salary_range": "$45,000 - $55,000",
+      "salary_range": "£60,000 - £80,000",
       "experience_level": "Mid-level",
       "latitude": 53.208470,
       "longitude": -4.165848
@@ -104,7 +104,7 @@ const jobs =   [
       "location": "London",
       "postcode": "E1 5RU",
       "skills_required": ["HTML", "CSS", "JavaScript"],
-      "salary_range": "$55,000 - $75,000",
+      "salary_range": "£80,000 - £100,000",
       "experience_level": "Mid-level",
       "latitude": 51.522323,
       "longitude": -0.056868
@@ -120,7 +120,7 @@ const jobs =   [
       "location": "Manchester",
       "postcode": "M1 3GL",
       "skills_required": ["Renewable Energy", "Engineering", "Sustainability"],
-      "salary_range": "$65,000 - $85,000",
+      "salary_range": "£70,000 - £90,000",
       "experience_level": "Mid-level",
       "latitude": 53.477603,
       "longitude": -2.234163
@@ -136,7 +136,7 @@ const jobs =   [
       "location": "London",
       "postcode": "E1 6BD",
       "skills_required": ["Teaching", "Mathematics", "Classroom Management"],
-      "salary_range": "$40,000 - $55,000",
+      "salary_range": "£55,000 - £75,000",
       "experience_level": "Mid-level",
       "latitude": 51.517637,
       "longitude": -0.074064
@@ -152,7 +152,7 @@ const jobs =   [
       "location": "Bangor",
       "postcode": "LL57 2SZ",
       "skills_required": ["Graphic Design", "Adobe Creative Suite", "Illustration"],
-      "salary_range": "$50,000 - $70,000",
+      "salary_range": "£60,000 - £80,000",
       "experience_level": "Senior",
     },
      
@@ -168,7 +168,7 @@ const jobs =   [
       "location": "Bangor",
       "postcode": "LL57 11MN",
       "skills_required": ["Python", "Django", "API Development"],
-      "salary_range": "$60,000 - $80,000",
+      "salary_range": "£50,000 - £70,000",
       "experience_level": "Mid-level",
     },
     {
@@ -182,7 +182,7 @@ const jobs =   [
       "location": "London",
       "postcode": "E1 8LJ",
       "skills_required": ["Digital Marketing", "SEO", "Social Media"],
-      "salary_range": "$70,000 - $90,000",
+      "salary_range": "£55,000 - £75,000",
       "experience_level": "Senior",
       "latitude": 51.509418,
       "longitude": -0.067649
@@ -212,7 +212,7 @@ const jobs =   [
       "location": "Bangor",
       "postcode": "LL57 2AB",
       "skills_required": ["Environmental Science", "Sustainability", "Climate Studies"],
-      "salary_range": "$60,000 - $75,000",
+      "salary_range": "£50,000 - £70,000",
       "experience_level": "Mid-level",
       "latitude": 53.227112,
       "longitude": -4.132689
@@ -228,7 +228,7 @@ const jobs =   [
       "location": "London",
       "postcode": "EC1A 1AA",
       "skills_required": ["Teaching", "History", "Curriculum Development"],
-      "salary_range": "$40,000 - $55,000",
+      "salary_range": "£80,000 - £100,000",
       "experience_level": "Mid-level",
       "latitude": 51.525136,
       "longitude": -0.111183
@@ -244,7 +244,7 @@ const jobs =   [
       "location": "Bangor",
       "postcode": "LL57 16WX",
       "skills_required": ["Environmental Consulting", "Conservation", "Ecosystem Analysis"],
-      "salary_range": "$65,000 - $85,000",
+      "salary_range": "£45,000 - £65,000",
       "experience_level": "Mid-level",
     },
     {
@@ -258,7 +258,7 @@ const jobs =   [
       "location": "Manchester",
       "postcode": "M1 3BD",
       "skills_required": ["Content Writing", "SEO", "Copywriting"],
-      "salary_range": "$50,000 - $70,000",
+      "salary_range": "£70,000 - £90,000",
       "experience_level": "Senior",
       "latitude": 53.476077,
       "longitude": -2.237711
@@ -274,7 +274,7 @@ const jobs =   [
       "location": "Bangor",
       "postcode": "LL57 3HG",
       "skills_required": ["Machine Learning", "Python", "Deep Learning"],
-      "salary_range": "$75,000 - $95,000",
+      "salary_range": "£80,000 - £100,000",
       "experience_level": "Senior",
       "latitude": 53.191209,
       "longitude": -4.058814
@@ -290,7 +290,7 @@ const jobs =   [
       "location": "Manchester",
       "postcode": "M1 5JB",
       "skills_required": ["Culinary Arts", "Menu Planning", "Kitchen Management"],
-      "salary_range": "$50,000 - $65,000",
+      "salary_range": "£50,000 - £70,000",
       "experience_level": "Senior",
       "latitude": 53.474581,
       "longitude": -2.248520
@@ -306,7 +306,7 @@ const jobs =   [
       "location": "London",
       "postcode": "EC2M 2AQ",
       "skills_required": ["Data Science", "Machine Learning", "Statistics"],
-      "salary_range": "$70,000 - $90,000",
+      "salary_range": "£55,000 - £75,000",
       "experience_level": "Senior",
       "latitude": 51.518872,
       "longitude": -0.086912
@@ -894,11 +894,13 @@ const jobs =   [
     "description": "Develop innovative mobile applications for our users.",
     "type": "contract",
     "date_posted": "2023-08-24",
-    "location": "Glasgow",
-    "postcode": "G2 1RW",
+    "location": "Liverpool",
+    "postcode": "L1 5EH",
     "skills_required": ["Mobile App Development", "iOS", "Android", "Swift", "Kotlin"],
     "salary_range": "£60,000 - £80,000",
-    "experience_level": "Mid Level"
+    "experience_level": "Mid Level",
+    "latitude": 53.396885,
+    "longitude": -2.978119
   },
   {
     "id": 60,
@@ -939,10 +941,12 @@ const jobs =   [
     "type": "contract",
     "date_posted": "2023-08-24",
     "location": "Liverpool",
-    "postcode": "L3 1DL",
+    "postcode": "L1 7BP",
     "skills_required": ["Technical Support", "Troubleshooting", "Customer Service"],
     "salary_range": "£40,000 - £60,000",
-    "experience_level": "Entry Level"
+    "experience_level": "Entry Level",
+    "latitude": 53.395428,
+    "longitude": -2.973829
   },
   {
     "id": 63,
@@ -1010,11 +1014,13 @@ const jobs =   [
     "description": "Join our frontend team to create responsive and engaging user interfaces.",
     "type": "contract",
     "date_posted": "2023-08-24",
-    "location": "London",
-    "postcode": "SW1A 1AA",
+    "location": "Liverpool",
+    "postcode": "L1 8JX",
     "skills_required": ["JavaScript", "React", "HTML", "CSS"],
     "salary_range": "£55,000 - £75,000",
-    "experience_level": "Mid Level"
+    "experience_level": "Mid Level",
+    "latitude": 53.401583,
+    "longitude": -2.988334
   },
   {
     "id": 68,
@@ -1090,10 +1096,12 @@ const jobs =   [
     "type": "contract",
     "date_posted": "2023-08-24",
     "location": "Liverpool",
-    "postcode": "L3 1DL",
+    "postcode": "L1 1NE",
     "skills_required": ["Technical Support", "Troubleshooting", "Customer Service"],
     "salary_range": "£40,000 - £60,000",
-    "experience_level": "Entry Level"
+    "experience_level": "Entry Level",
+    "latitude": 53.407058,
+    "longitude": -2.980548
   },
   {
     "id": 73,
@@ -1133,11 +1141,13 @@ const jobs =   [
     "description": "Lead IT projects and ensure successful project delivery.",
     "type": "full-time",
     "date_posted": "2023-08-24",
-    "location": "Manchester",
-    "postcode": "M1 3BN",
+    "location": "Liverpool",
+    "postcode": "L1 1RG",
     "skills_required": ["Project Management", "Agile", "Stakeholder Communication"],
     "salary_range": "£70,000 - £90,000",
-    "experience_level": "Mid Level"
+    "experience_level": "Mid Level",
+    "latitude": 53.407149,
+    "longitude": -2.982717
   },
   {
     "id": 76,

@@ -8,11 +8,11 @@ const Search = ({handleTitleInput,titleInput, handleSubmit, handleLocationInput 
   const buttons = [
     {
       category: 'location',
-      options: [ 'London','Manchester','Bristol', 'Cambridge', 'Edinburgh', 'Belfast', 'Cardiff', 'Birmingham', 'Glasgow']
+      options: [ 'London','Manchester','Bristol', 'Cambridge', 'Edinburgh','Birmingham', 'Glasgow']
     },
     {
       category: 'salarie',
-      options: ['£70,000 - £90,000', '£45,000 - £65,000', '£55,000 - £75,000','£60,000 - £80,000', '£50,000 - £70,000', '£80,000 - £100,000', '£60,000 - £80,000']
+      options: ['£70,000 - £90,000', '£45,000 - £65,000', '£55,000 - £75,000','£60,000 - £80,000', '£50,000 - £70,000', '£80,000 - £100,000']
     },
     {
       category: 'type',
@@ -39,15 +39,7 @@ const Search = ({handleTitleInput,titleInput, handleSubmit, handleLocationInput 
             })}
            </select>)
           })}
-          {/* <button onChange={()=> handleFiltering()} value='london'></button>
-          <button>Occupation</button>
-          <button>Experience</button> */}
-          {/* <select id='salary' placeholder='salary' onChange={(e)=>handleFiltering(e, 'salary',  e.target.value)}>
-            <option value='£70,000 - £90,000'>£70,000 - £90000</option>
-            <option value='£60,000 - £80,000'>£60,000 - £80,000</option>
-            <option value='£50,000 - £70,000'>£50,000 - £70,000</option>
-          </select> */}
-          <button>Job Type</button>
+          {/* <button>Job Type</button> */}
         </div> 
       </div>
 

@@ -18,7 +18,6 @@ const Load = () => {
           <li key={job.id}>
             <h2>{job.title}</h2>
             <p>{job.skills_required}</p>
-            {/* Render other job details */}
           </li>
         ))}
       </ul>

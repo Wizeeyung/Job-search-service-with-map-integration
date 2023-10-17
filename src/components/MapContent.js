@@ -10,10 +10,18 @@ const MapContent = ({setViewport, mapRef}) => {
   const [active, setActive] = useState(false)
 
 
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      getPlaces();
+    }, 2000);
 
-  useEffect(()=>{
-    getPlaces()
-  }, [input])
+    return () => clearTimeout(timeoutId); // Clear the timeout on unmount
+  }, [input]);
+
+
+  // useEffect(()=>{
+  //   getPlaces()
+  // }, [input])
 
   const getPlaces = async ()=>{
     const res = await fetch(`https://api.mapbox.com/geocoding/v5/mapbox.places/${input}.json?access_token=${process.env.REACT_APP_MAPBOX_TOKEN}`)
@@ -26,10 +34,10 @@ const MapContent = ({setViewport, mapRef}) => {
     const slicedPlaceName = place.place_name.slice(0, 30);
     const truncatedPlaceName = place.place_name.length > 30 ? `${slicedPlaceName}...` : slicedPlaceName;
     
-    // setViewport((prevViewport)=>({
-    //   ...prevViewport, latitude: place.geometry.coordinates[1],
-    //   longitude: place.geometry.coordinates[0], zoom: 12, transitionDuration: 1000
-    // }))
+    setViewport((prevViewport)=>({
+      ...prevViewport, latitude: place.geometry.coordinates[1],
+      longitude: place.geometry.coordinates[0], zoom: 12, transitionDuration: 1000
+    }))
 
     // Access the map instance using the ref
   const map = mapRef.current.getMap();
@@ -37,13 +45,18 @@ const MapContent = ({setViewport, mapRef}) => {
   const targetCenter = [place.geometry.coordinates[0], place.geometry.coordinates[1]];
   const targetZoom = 12;
 
-  // Use the map's easeTo method for smooth transition
-  map.easeTo({
-    center: targetCenter,
-    zoom: targetZoom,
-    duration: 1000, // Set the duration of the transition in milliseconds
-  });
+  const initialZoom = map.getZoom();
+  const zoomStep = (targetZoom - initialZoom) / 100; // Adjust the number of steps as needed
+  let currentZoom = initialZoom;
 
+  const zoomInInterval = setInterval(() => {
+    if (currentZoom >= targetZoom) {
+      clearInterval(zoomInInterval);
+    } else {
+      currentZoom += zoomStep;
+      map.setZoom(currentZoom);
+    }
+  }, 10); //
     
     setInput(truncatedPlaceName)
     setActive(true)

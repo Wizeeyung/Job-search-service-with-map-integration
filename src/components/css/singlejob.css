@@ -104,3 +104,38 @@ button.align{
 
 
 
+/* ............Mobile Responsiveness................ */
+@media all and (max-width:420px) {
+  .singlejob{
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .single-job-left h1{
+    margin-top: 0;
+  }
+  
+  .single-job-left{
+    width: 100%;
+  }
+}
+
+
+
+
+
+
+/* .....Tablet Responsiveness......... */
+@media all and (min-width: 421px) and (max-width:920px){
+  .singlejob{
+    width: 100%;
+  }
+}
+
+
+
+
+
+
+
+
